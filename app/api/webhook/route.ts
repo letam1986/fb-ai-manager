@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
       console.log("TIN NHẮN:", messageText);
 
-      const response = await fetch("https://fb-ai-manager.vercel.app/api/reply", {
+     const response = await fetch(new URL("/api/reply", req.url), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
